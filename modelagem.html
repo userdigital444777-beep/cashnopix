@@ -1,0 +1,145 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="https://cashonpix.site/pdv/">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TODO: Set the document title to the name of your application -->
+    <title>Lovable App</title>
+    <meta name="description" content="Lovable Generated Project" />
+    <meta name="author" content="Lovable" />
+
+    <!-- TODO: Update og:title to match your application name -->
+    <meta property="og:title" content="Lovable App" />
+    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TFJX6S4Z');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Advanced Tracking - UTM & Click ID Capture -->
+    <script>
+    (function() {
+        function getParameterByName(name) {
+            const url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+        function setCookie(name, value, days) {
+            const d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + d.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+        function getCookie(name) {
+            const value = '; ' + document.cookie;
+            const parts = value.split('; ' + name + '=');
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        function captureUTMParameters() {
+            var parameters = [
+                'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+                'gclid', 'fbclid', 'dclid', 'msclkid', 'referrer'
+            ];
+            parameters.forEach(function(param) {
+                var paramValue = getParameterByName(param);
+                if (paramValue) {
+                    if (param === 'fbclid') {
+                        if (!getCookie('_fbc')) {
+                            var fbcValue = 'fb.1.' + Math.floor(Date.now() / 1000) + '.' + paramValue;
+                            setCookie('_fbc', fbcValue, 30);
+                        }
+                    } else {
+                        setCookie(param, paramValue, 30);
+                    }
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', captureUTMParameters);
+    })();
+    </script>
+
+    <!-- Advanced Tracking - Form Field Auto-Fill -->
+    <script>
+    (function() {
+        function getCookie(name) {
+            const value = '; ' + document.cookie;
+            const parts = value.split('; ' + name + '=');
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        function fillFormFields() {
+            var fields = [
+                'name', 'email', 'phone', 'utm_source', 'utm_medium', 'utm_campaign',
+                'utm_term', 'utm_content', 'gclid', 'fbclid', 'dclid', 'msclkid', 'referrer'
+            ];
+            fields.forEach(function(field) {
+                var value = getCookie(field);
+                if (value) {
+                    var input = document.querySelector('[id="form-field-' + field + '"]');
+                    if (input) {
+                        input.value = value;
+                    }
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', fillFormFields);
+    })();
+    </script>
+    <script type="module" crossorigin src="/pdv/assets/index-CcOEq0_8.js"></script>
+    <link rel="stylesheet" crossorigin href="/pdv/assets/index-CI-SIXB_.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <!-- Tracking - Append UTM Params to External Links -->
+    <script>
+    (function() {
+        function getCookie(name) {
+            var value = '; ' + document.cookie;
+            var parts = value.split('; ' + name + '=');
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        function addParametersToLinks() {
+            var parameters = [
+                'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+                'gclid', 'fbclid', 'dclid', 'msclkid', 'referrer'
+            ];
+            var links = document.querySelectorAll('a');
+            links.forEach(function(link) {
+                if (link.hostname !== window.location.hostname || link.classList.contains('external-link')) {
+                    var url = new URL(link.href);
+                    var hasParams = false;
+                    parameters.forEach(function(param) {
+                        var paramValue = getCookie(param);
+                        if (paramValue) {
+                            url.searchParams.set(param, paramValue);
+                            hasParams = true;
+                        }
+                    });
+                    if (hasParams) {
+                        link.href = url.toString();
+                    }
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', addParametersToLinks);
+    })();
+    </script>
+  </body>
+</html>
